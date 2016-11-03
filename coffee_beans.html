@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Beans</title>
+</head>
+<body>
+<form method="POST" action="http://requestb.in/yqslxcyq">
+
+
+    <h1>Welcome to Coffee Beans!</h1>
+
+    <h2>Returning customer?</h2>
+    <p>
+        <label for="email">Email</label>
+        <input id="email" name="username" type="text" placeholder="Email">
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Password">
+    </p>
+    <p>
+        <button type="submit">Login</button>
+    </p>
+
+    <h2>New customer?</h2>
+
+    <p>
+        <label for="full_name">Full name</label>
+        <input id="full_name" name="full_name" type="text">
+    </p>
+    <p>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text">
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Password">
+    </p>
+
+    <hr>
+
+    <h2>What type of pizza would you like?</h2>
+    <input type="radio" name="pizza" value="regular">Regular<br>
+    <input type="radio" name="pizza" value="pan">Pan<br>
+    <input type="radio" name="pizza" value="stuffed">Stuffed crust<br>
+    <input type="radio" name="pizza" value="nogluten">Gluten-free<br>
+
+    <br>
+    <h2>What type of toppings would you like?</h2>
+    <input type="checkbox" name="toppings" value="cheese">Cheese<br>
+    <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+    <input type="checkbox" name="toppings" value="sausage">Italian sausage<br>
+    <input type="checkbox" name="toppings" value="bacon">Bacon<br>
+    <input type="checkbox" name="toppings" value="onion">Onions<br>
+    <input type="checkbox" name="toppings" value="bellpepper">Bell peppers<br>
+    <input type="checkbox" name="toppings" value="jalapeno">Jalapenos<br>
+
+    <h2>Pickup or delivery?</h2>
+    <select id="transport" name="transport">
+        <option value="1">Pickup</option>
+        <option value="2">Delivery</option>
+    </select>
+
+    <h2>How did you hear about us?</h2>
+    <label for="inquiry">Please select all that apply:</h2><br>
+        <select id="inquiry" name="inquiry []" multiple>
+            <option value="1">TV</option>
+            <option value="2">Radio</option>
+            <option value="3">Billboard</option>
+            <option value="4">Newspaper coupon</option>
+            <option value="5">Web site review</option>
+            <option value="6">Word of mouth</option>
+            <option value="7">Just saw us on the street</option>
+
+
+            <p>
+                <button type="submit">Submit order</button>
+            </p>
+</form>
+</body>
+</html>

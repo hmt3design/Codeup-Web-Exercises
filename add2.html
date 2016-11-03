@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first form</title>
+</head>
+<body>
+<form method="GET" action="http://requestb.in/yqslxcyq">
+
+    <h2>User Login</h2>
+    <p>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Username">
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Password">
+    </p>
+    <p>
+        <button type="submit">Login</button>
+    </p>
+
+    <h2>Compose an email</h2>
+
+    <p>
+        <label for="recipient">To:</label>
+        <input id="recipient" name="recipient" type="text">
+    </p>
+    <p>
+        <label for="sender">From:</label>
+        <input id="sender" name="sender" type="text">
+    </p>
+    <p>
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text">
+    </p>
+    <p>
+        <textarea id="email_body" name="email_body" rows="5" cols="40">Your message here.</textarea>
+    </p>
+    <p>
+        <input type="checkbox" id="sent_folder" name="sent_folder" value="yes" checked>
+        <label for="mailing_list">Save a copy to your "sent" folder?</label>
+    </p>
+    <p>
+        <button type="submit">Send email</button>
+    </p>
+
+    <p>What is the airspeed velocity of an unladen swallow?</p>
+    <label>
+        <input type="radio" name="q1" value="I don't know.">
+        I don't know.
+    </label>
+    <label>
+        <input type="radio" name="q1" value="An African swallow or an European swallow?">
+        An African swallow or an European swallow?
+    </label>
+    <p>
+        <button type="submit">Submit answer</button>
+    </p>
+
+    <h2>What type of vehicle do you drive?</h2>
+    <input type="checkbox" name="vehicle" value="truck">Truck<br>
+    <input type="checkbox" name="vehicle" value="sedan">Sedan<br>
+    <input type="checkbox" name="vehicle" value="motorcycle">Motorcycle<br>
+    <input type="checkbox" name="vehicle" value="other">Not listed here<br>
+    <input type="checkbox" name="vehicle" value="na">I don't own a vehicle<br>
+    <p>
+        <button type="submit">Submit answer</button>
+    </p>
+
+    <h2>Select testing</h2>
+    <label for="adobe">Do you believe that Adobe has become the Matrix, and its programs are the Agents?</label><br>
+    <select id="adobe" name="adobe">
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+    </select>
+
+    <br>
+
+    <label for="candy">What is the best Halloween candy?</h2><br>
+        <select id="candy" name="candy[]" multiple>
+            <option value="1">Reeses Peanut Butter Cups</option>
+            <option value="2">Almond Joy</option>
+            <option value="3">Tootsie Roll</option>
+            <option value="4">Starburst Chews</option>
+
+</form>
+
+</form>
+</body>
+</html>
