@@ -15,22 +15,6 @@ var getNum1;
 var getNum2;
 var result=0;
 
-function add(a,b) {
-    return a+b;
-}
-
-function subtract(a,b) {
-    return a-b;
-}
-
-function multiply(a,b) {
-    return a*b;
-}
-
-function divide(a,b) {
-    return a/b;
-}
-
 function askForNum() {
     getNum1 = parseInt(prompt("Input the first number:"));
     getNum2 = parseInt(prompt("Input the second number:"));

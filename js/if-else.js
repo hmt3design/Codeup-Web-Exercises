@@ -1,6 +1,6 @@
 /**
  * Created by Harry on 11/3/16.
- */
+*/
 'use strict';
 var score = (70 + 80 + 95) / 3;
 if (score >= 80) {

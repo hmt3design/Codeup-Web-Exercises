@@ -20,13 +20,13 @@
     console.log("The third name is: " + names[2]);
     console.log("The fourth name is: " + names[3]);
 
-    console.log("Using For loop")
+    console.log("Using For loop");
     for (var i = 0; i < names.length; i++) {
         console.log('The name at index ' + i + ' is: ' + names[i]);
         console.log("Name " + (i+1) + ": " + names[i]);
     }
 
-    console.log("Using For/Each loop")
+    console.log("Using For/Each loop");
     names.forEach(function (element, index, array) {
         console.log('Name ' + (index+1) + ' is ' + "'" + element + "'" + " with an index of " + index);
     });
