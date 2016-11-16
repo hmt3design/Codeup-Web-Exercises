@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <h2 id="header">Bootstrap Calculator</h2>
+    </div>
+</div>
+<div id="operands">
+    <div class="row">
+        <div class="col-xs-5">
+            <input id="left_Operand" type="text" class="form-control" readonly>
+        </div>
+        <div class="col-xs-2">
+            <input id="center_operator" type="text" class="form-control" readonly>
+        </div>
+        <div class="col-xs-5">
+            <input id="right_Operand" type="text" class="form-control" readonly>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="row1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2">
+                <input id="btn1" class="btn btn-default btn-lg" type="button" value="1">
+            </div>
+            <div class="col-xs-2">
+                <input id="btn2" class="btn btn-default btn-lg" type="button" value="2">
+            </div>
+            <div class="col-xs-2">
+                <input id="btn3" class="btn btn-default btn-lg" type="button" value="3">
+            </div>
+            <div class="col-xs-2">
+                <input id="btnMultiply" class="btn btn-default btn-lg" type="button" value="*">
+            </div>
+            <div class="col-xs-2">
+                <input id="btnDivide" class="btn btn-default btn-lg" type="button" value="/">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="row2">
+    <div class="container">
+        <div class="row">
+            <div id="btn4" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="4">
+            </div>
+            <div id="btn5" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="5">
+            </div>
+            <div id="btn6" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="6">
+            </div>
+            <div id="btnAdd" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="+">
+            </div>
+            <div id="btnSubtract" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="-">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="row3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2">
+                <input id="btn7" class="btn btn-default btn-lg" type="button" value="7">
+            </div>
+            <div class="col-xs-2">
+                <input id="btn8" class="btn btn-default btn-lg" type="button" value="8">
+            </div>
+            <div class="col-xs-2">
+                <input id="btn9" class="btn btn-default btn-lg" type="button" value="9">
+            </div>
+            <div id="btnEquals" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="=">
+            </div>
+            <div id="btnPercent" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="%">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="row4">
+    <div class="container">
+        <div class="row">
+            <div id="btnDecimal" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value=".">
+            </div>
+            <div id="btn0" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="0">
+            </div>
+            <div id="btnClear" class="col-xs-2">
+                <input class="btn btn-default btn-lg" type="button" value="C">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/calculator.js"></script>
+</body>
+</html>
