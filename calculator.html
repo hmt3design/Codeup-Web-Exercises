@@ -14,100 +14,42 @@
         <h2 id="header">Bootstrap Calculator</h2>
     </div>
 </div>
-<div id="operands">
-    <div class="row">
-        <div class="col-xs-5">
-            <input id="left_Operand" type="text" class="form-control" readonly>
-        </div>
-        <div class="col-xs-2">
-            <input id="center_operator" type="text" class="form-control" readonly>
-        </div>
-        <div class="col-xs-5">
-            <input id="right_Operand" type="text" class="form-control" readonly>
-        </div>
-
-    </div>
-</div>
-
-
-<div id="row1">
-    <div class="container">
+<form name="calculator">
+    <div class="container-fixed col-md-3 col-md-offset-4 text-center">
         <div class="row">
-            <div class="col-xs-2">
-                <input id="btn1" class="btn btn-default btn-lg" type="button" value="1">
-            </div>
-            <div class="col-xs-2">
-                <input id="btn2" class="btn btn-default btn-lg" type="button" value="2">
-            </div>
-            <div class="col-xs-2">
-                <input id="btn3" class="btn btn-default btn-lg" type="button" value="3">
-            </div>
-            <div class="col-xs-2">
-                <input id="btnMultiply" class="btn btn-default btn-lg" type="button" value="*">
-            </div>
-            <div class="col-xs-2">
-                <input id="btnDivide" class="btn btn-default btn-lg" type="button" value="/">
-            </div>
+            <input id="left_Operand" type="text" class="form-control" placeholder="0" readonly>
+            <input id="center_Operator" type="text" class="form-control" readonly>
+            <input id="right_Operand" type="text" class="form-control" placeholder="0" readonly>
+            <input id="answer" type="text" class="form-control" placeholder="0" readonly>
         </div>
-    </div>
-</div>
-<div id="row2">
-    <div class="container">
         <div class="row">
-            <div id="btn4" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="4">
-            </div>
-            <div id="btn5" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="5">
-            </div>
-            <div id="btn6" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="6">
-            </div>
-            <div id="btnAdd" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="+">
-            </div>
-            <div id="btnSubtract" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="-">
-            </div>
+            <input class="btn btn-info btn-lg" type="button" value="1">
+            <input class="btn btn-info btn-lg" type="button" value="2">
+            <input class="btn btn-info btn-lg" type="button" value="3">
+            <input class="btn btn-primary btn-lg" type="button" value="*">
+            <input class="btn btn-primary btn-lg" type="button" value="/">
         </div>
-    </div>
-</div>
-<div id="row3">
-    <div class="container">
         <div class="row">
-            <div class="col-xs-2">
-                <input id="btn7" class="btn btn-default btn-lg" type="button" value="7">
-            </div>
-            <div class="col-xs-2">
-                <input id="btn8" class="btn btn-default btn-lg" type="button" value="8">
-            </div>
-            <div class="col-xs-2">
-                <input id="btn9" class="btn btn-default btn-lg" type="button" value="9">
-            </div>
-            <div id="btnEquals" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="=">
-            </div>
-            <div id="btnPercent" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="%">
-            </div>
+            <input class="btn btn-info btn-lg" type="button" value="4">
+            <input class="btn btn-info btn-lg" type="button" value="5">
+            <input class="btn btn-info btn-lg" type="button" value="6">
+            <input class="btn btn-primary btn-lg" type="button" value="+">
+            <input class="btn btn-primary btn-lg" type="button" value="-">
         </div>
-    </div>
-</div>
-<div id="row4">
-    <div class="container">
         <div class="row">
-            <div id="btnDecimal" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value=".">
-            </div>
-            <div id="btn0" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="0">
-            </div>
-            <div id="btnClear" class="col-xs-2">
-                <input class="btn btn-default btn-lg" type="button" value="C">
-            </div>
+            <input class="btn btn-info btn-lg" type="button" value="7">
+            <input class="btn btn-info btn-lg" type="button" value="8">
+            <input class="btn btn-info btn-lg" type="button" value="9">
+            <input class="btn btn-primary btn-lg" type="button" value="%">
+            <input class="btn btn-success btn-lg" type="button" value="=">
+        </div>
+        <div class="row">
+            <input class="btn btn-info btn-lg" type="button" value="0">
+            <input class="btn btn-info btn-lg" type="button" value=".">
+            <input class="btn btn-warning btn-lg" type="button" value="C">
         </div>
     </div>
-</div>
+</form>
 <script src="js/calculator.js"></script>
 </body>
 </html>

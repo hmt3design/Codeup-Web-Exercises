@@ -1,3 +1,24 @@
 #header {
     color: white;
+    text-align: center;
+}
+#left_Operand, #right_Operand, #answer {
+    text-align: right;
+    width: 120px;
+    height: 30px;
+}
+
+#center_Operator {
+    text-align: center;
+    width: 50px;
+    height: 30px;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border-color: red;
+    margin: 5px;
+    font-size: 30px;
 }
