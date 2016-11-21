@@ -10,16 +10,42 @@
     var total = document.getElementById("answer")
 
     var btnPressed = function () {
-        // console.log(this.value);
+        // check for clear function
         if (this.value == "C") {
             leftOperand.value = "";
             centerOperator.value = "";
             rightOperand.value = "";
             total.value = "";
+            // check for equals sign press
         } else if (this.value == "=") {
-            total.value = eval(leftOperand.value);
+            // calculate the equation
+            switch(centerOperator.value){
+                case "+":
+                    total.value = parseFloat(leftOperand.value) + parseFloat(rightOperand.value);
+                    break;
+                case "-":
+                    total.value = parseFloat(leftOperand.value) - parseFloat(rightOperand.value);
+                    break;
+                case "*":
+                    total.value = parseFloat(leftOperand.value) * parseFloat(rightOperand.value);
+                    break;
+                case "/":
+                    total.value = parseFloat(leftOperand.value) / parseFloat(rightOperand.value);
+                    break;
+            }
         } else {
-            leftOperand.value += this.value;
+            // check to see if numbers or operators are entered
+            // if numbers, go leftOperand
+            // if operators, go centerOperator then rightOperand
+            if (!isNaN(this.value) || (this.value) == ".")  {
+                if (centerOperator.value == "") {
+                    leftOperand.value += this.value;
+                } else {
+                    rightOperand.value += this.value;
+                }
+            } else {
+                centerOperator.value = this.value;
+            };
         }
     };
 
@@ -30,14 +56,3 @@
     }
 
 })();
-
-// // add event listener for numbers only 
-// var btnNum = document.getElementsByClassName("btn_Num btn-default btn-lg");
-// for (var i = 0; i < btnNum.length; i++) {
-//     btnNum[i].addEventListener("click", btnPressed);
-// }
-// // add event listener for operands only
-// var btnOp = document.getElementsByClassName("btn_Op btn-default btn-lg");
-// for (var y = 0; y < btnOp.length; y++) {
-//     btnOp[y].addEventListener("click", btnPressed);
-// }
