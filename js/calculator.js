@@ -19,6 +19,23 @@
             // check for equals sign press
         } else if (this.value == "=") {
             // calculate the equation
+            // function calcEq(centerOperator.value){
+            //     var centOp = {
+            //         "+": function () {
+            //             return (total.value = parseFloat(leftOperand.value) + parseFloat(rightOperand.value));
+            //         },
+            //         "-": function () {
+            //             return (total.value = parseFloat(leftOperand.value) - parseFloat(rightOperand.value));
+            //         },
+            //         "*": function () {
+            //             return (total.value = parseFloat(leftOperand.value) * parseFloat(rightOperand.value));
+            //         },
+            //         "/": function () {
+            //             return (total.value = parseFloat(leftOperand.value) / parseFloat(rightOperand.value));
+            //         }
+            //     };
+            //     return centOp[centerOperator.value]();
+            // }
             switch(centerOperator.value){
                 case "+":
                     total.value = parseFloat(leftOperand.value) + parseFloat(rightOperand.value);
