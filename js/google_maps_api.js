@@ -106,7 +106,7 @@
         {
             position: "countyLine",
             name: "The County Line",
-            address: "10101 W IH 10, San Antonio, Texas 78230, San Antonio, TX 78230",
+            address: "10101 W IH 10, San Antonio, Texas 78230",
             lat: 29.537768,
             lng: -98.567388,
             icon: "img/barbecue_21-512-copy.png",
@@ -125,10 +125,19 @@
         // Current object
         var objRest = restaurants[i];
 
+        var objString = '<div id="restContainer">' +
+            '<h2 class="restHeader">' + objRest.name + '</h2>' +
+            '<div class="restContent">' +
+            '<p>' + objRest.address + '</p>' + '<hr>' +
+            '<p>' + objRest.narrative + '</p>' +
+            '</div>' +
+            '</div>';
+
+
         var infowindow = new google.maps.InfoWindow({
-        content: objResti,
-        maxWidth: 300
-    })
+            content: objString,
+            maxWidth: 300
+        });
 
         // Adding a new marker for the object
         var marker = new google.maps.Marker({
@@ -138,6 +147,9 @@
             icon: objRest.icon,
             name: objRest.name // Giving the marker a title with the correct restaurant name
         });
+
+        //creates an infowindow 'key' in the marker.
+        marker.infowindow = infowindow;
 
         marker.addListener('click', toggleBounce);
 
@@ -151,10 +163,9 @@
 
         // Open the window using our map and marker
         marker.addListener('click', function () {
-            infowindow.open(map, marker);
+            // infowindow.open(map, marker);
+            return this.infowindow.open(map, this);
         });
-        // map.setZoom(20);
-        // map.panTo(marker.position);
 
     }
 })();

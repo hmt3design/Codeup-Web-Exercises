@@ -1,0 +1,20 @@
+#map-canvas {
+    height: 600px;
+    width: 100%;
+}
+
+.restHeader {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 10px;
+    background-color: #9e0315;
+    color: white;
+    margin: 1px;
+    border-radius: 2px 2px 0 0;
+    text-align: center;
+}
+
+.restContent {
+    font-family: 'Oswald', sans-serif;
+}
