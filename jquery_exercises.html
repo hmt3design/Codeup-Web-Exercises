@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery exercises</title>
+
+</head>
+<body>
+<h1 id="header">U.S.S. Enterprise ship classes</h1>
+<p id="intro">A listing of the different types of classes for the U.S.S. Enterprise</p>
+<ul id="status">
+    <li class="retired">Retired</li>
+    <li class="destroyed">Destroyed in action</li>
+    <li class="active">Currently in active service</li>
+</ul>
+<ol id="list">
+    <li class="retired">U.S.S. Enterprise: <span class="shipName"> Constitution</span></li>
+    <li class="destroyed">U.S.S. Enterprise refit: <span class="shipName">Enterprise</span></li>
+    <li class="retired">U.S.S. Enterprise-A: <span class="shipName">Enterprise</span></li>
+    <li class="retired">U.S.S. Enterprise-B: <span class="shipName">Excelsior</span></li>
+    <li class="destroyed">U.S.S. Enterprise-C: <span class="shipName">Ambassador</span></li>
+    <li class="destroyed">U.S.S. Enterprise-D: <span class="shipName">Galaxy</span></li>
+    <li class="active">U.S.S. Enterprise-E: <span class="shipName">Sovereign</span></li>
+</ol>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function() {
+//        var header = $("#header").html();
+//        alert(header);
+//        $("#header").text("Modern-era U.S.S. Enterprise ship classes");
+//        var intro = $("#intro").html();
+//        alert(intro);
+//        $(".retired").css({"color": "green", "padding": "10px"});
+//        $(".destroyed").css({"color": "red", "border-color": "red", "border-style": "solid", "margin": "10px 0 10px 0", "padding": "5px"});
+//        $(".active").css("color", "blue");
+//        $(".shipName").css("font-weight", "bold")
+//        $("li").css("font-size", "20px");
+//        $("h1, p").css("background-color", "#FF0");
+//        var h1Alert = $("h1").html();
+//        alert(h1Alert);
+        $("h1").click(function () {
+            $(this).css("background-color", "#FF0");
+        }),
+        $("p").dblclick(function () {
+            $(this).css("font-size", "18px");
+        }),
+        $("li").hover(function () {
+            $(this).css("color", "red");
+        });
+    });
+</script>
+<!--Note: I used "destroyed" instead of "codeup"-->
+</html>
