@@ -13,37 +13,39 @@
 <script>
     "use strict";
     // hide and show code hint
-//    $(document).ready(function() {
-//        var hide = $(".hide").html();
-//        $('.hide').css("color", "white");
-//        $(".hint").click(function () {
-//            $(hide).css("color", "black");
-//        }),
-//    }
+    $(document).ready(function() {
+        var hideText = $(".hide").html();
+        $('.hide').css("color", "white");
+        $(".hint").click(function () {
+            $(hideText).css("color", "black");
+        });
+    });
 
     // set up array of correct keys
+
     var codeKeys = [38,38,40,40,37,39,37,39,66,65,13];
+    var counter = 0;
+
 
     // set up check to see if first key is correct
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
-        });
+    $(document).keyup(function(e){
+        console.log(e.keyCode);
 
+        if (codeKeys[counter] == e.keyCode) {
+            counter+=1;
+        } else {
+            counter=0;
+            alert("You have entered an incorrect sequence. Try again.");
+        };
 
-    $(document)
+        if (counter == codeKeys.length){
+            counter=0;
+            alert("You have entered the correct sequence. You win 30 more lives!");
+        }
 
     });
 
 </script>
 </body>
 </html>
-
-var counter = 0;
-var arr = [1,2,3];
-var myuserarr = [2,3,4,5]
-if (arr[counter] == myuserarr[counter] {
-counter==;
-} else {
-counter = 0;
-}
