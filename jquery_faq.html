@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery FAQ</title>
+    <style>
+        .invisible {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+            padding: 10px;
+            background-color: #9e0315;
+            color: white;
+            margin: 1px;
+            border-radius: 2px 2px 0 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Hawai'i Volcanoes National Park FAQ</h1>
+<dl>
+    <dt>1. How many volcanoes are there on the Big Island?</dt>
+    <dd class="invisible">Five volcanoes make up the Big Island of Hawai'i: Kohala, Mauna Kea, Hualalai, Mauna Loa, and Kilauea.</dd>
+    <dt>2. Which ones are extinct, dormant, or active?</dt>
+    <dd class="invisible"><em>Kohala</em>, the oldest volcano on this island, last erupted about 60,000 years ago and is considered extinct.<br>
+        <em>Mauna Kea</em> last erupted 3,600 years ago and is dormant.<br>
+        <em>Hualalai, Mauna Loa,</em> and <em>Kilauea</em> are active. Kilauea has been erupting continiously since 1983.</dd>
+    <dt>3. How much lava does Kilauea erupt on a daily basis?</dt>
+    <dd class="invisible">The current eruption rate is 250,000-650,000 cubic yards per day. That is enough to resurface a 20-mile-long two-lane road every day.</dd>
+    <dt>4. Where does all of that lava go?</dt>
+    <dd class="invisible">Most of the lava is transported by lava tubes to the ocean, where it fragments, and adds layers of rubble to the submarine flank of the volcano. Some does break the surface, where it can be destructive, depending on which way it flows.</dd>
+    <dt>5. How many homes/buildings have been destroyed in the current eruption?</dt>
+    <dd class="invisible">To date, 181 homes, the Wahaula visitors center, the Royal Gardens Community Center, the Mauna Kea Congregational Church, and the Kalapana Drive-in have been destroyed.</dd>
+    <a href="#" id="open-invisible">Click to toggle the answers.</a>
+</dl>
+</body>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function () {
+        $('#open-invisible').click(function (event) {
+            event.preventDefault();
+            $('.invisible').toggleClass('visible');
+        });
+    });
+</script>
+</html>
