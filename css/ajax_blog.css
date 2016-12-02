@@ -1,0 +1,21 @@
+.jumbotron {
+    background-color:black;
+    background-image: url("../img/home-banner-two-new.jpg");
+    background-size:100% auto;
+}
+
+body {
+    background-color: black;
+}
+
+h1, h2, h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+p, label {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    color: white;
+}
