@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Exo+2:400,900" rel="stylesheet">
     <link rel="stylesheet" href="css/ajax_blog.css">
 </head>
@@ -18,8 +21,29 @@
 </div>
 
 <div id="posts" class="container"></div>
-
-<a id="reload" class="btn btn-primary">Reload</a>
+<div id="blog-form" class="container">
+    <h3>Post a new blog:</h3>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="writer" placeholder="Name">
+            <option value="1">Harry</option>
+            <option value="2">Guest</option>
+            </select>
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-control" id="datepicker" placeholder="Date">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="title" data-date-format="MM dd, yy"  placeholder="Title of your blog">
+        </div>
+        <div class="form-group">
+            <p>Post your blog entry here:</p>
+            <textarea class="form-control" rows="5" id="content">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
 
 </body>
 <script src="ajax_blog.js"></script>

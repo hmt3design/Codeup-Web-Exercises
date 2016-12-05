@@ -3,6 +3,8 @@
  */
 var populate = function() {
     "use strict";
+
+    // post original JSON data
     var blogContent = $.get("data/blog.json");
 
     var mainBlog = [];
@@ -35,20 +37,26 @@ var populate = function() {
 
 populate();
 
-$("#reload").click(function () {
-    $.get("data/blog.json");
-    populate();
-});
+// // reload button
+// $("#reload").click(function () {
+//     $.get("data/blog.json");
+//     populate();
+// });
 
+
+// datepicker function
 $( function() {
     $("#datepicker").datepicker();
 } );
 
-
 // Add a blog post
 // var addPost = function(post){
-//     add post object to global post array
-//     append post data to the page
+//
+// };
+
+$('#blog-form').serializeArray()
+
+
 // };
 // Remove a blog post
 // var removePost = function(index){
