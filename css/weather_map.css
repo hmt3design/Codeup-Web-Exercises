@@ -2,10 +2,15 @@ body {
     background-color: #3dd2cb;
 }
 
-.col-xs-3 {
+.row {
     background-color: white;
     border-radius: 8px;
     margin: 5px;
+}
+
+.col-sm-6, .col-sm-4 {
+    border-color: red;
+    border-width: 3px;
 }
 
 #map-canvas {
@@ -14,4 +19,8 @@ body {
 }
 #current-city {
     font-size: medium;
+}
+
+#latitude, #longitude {
+    text-align: right;
 }

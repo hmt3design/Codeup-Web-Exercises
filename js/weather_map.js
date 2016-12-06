@@ -55,17 +55,25 @@ $(document).ready(function () {
         return data.city.coord.lon;
     };
 
-    // call OpenWeatherMap API
-    var openWeatherRequest = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-        APPID: "b4197e496c4b73186de7934cf48d40d6",
-        id: 4726206,
-        units: "imperial",
-        cnt: 3
-    });
-    openWeatherRequest.done(function (data) {
-        console.log(data);
-        setCityNameFromResponse(data);
+    var buildHTML = function(object) {
+        return '<div class="col-sm-4">' +
+            '<p><strong>' + object.day.format("dddd") + ',' + '<br>' +
+            object.day.format("LL") + '</strong></p>' +
+            object.maxTemp + " / " + object.minTemp + '</p>' +
+            '<img src="http://openweathermap.org/img/w/' + object.icon + '.png"><p>' + object.description + '</p>' +
+            '<p><em>Humidity: </em>' + object.humidity + '%</p>' +
+            '<p><em>Wind: </em>' + object.wind + ' mph</p>' +
+            '<p><em>Barometer: </em>' + object.pressure + ' hPa</p>' +
+        '</div>';
+    };
 
+    // call OpenWeatherMap API
+
+    var renderWeather = function (data) {
+        setCityNameFromResponse(data);
+        // console.log("Got weather data")
+        weatherArray = [];
+        var mainTable = '';
         data.list.forEach(function (object) {
             var weatherData = {
                 maxTemp: getMaxTemp(object),
@@ -81,23 +89,43 @@ $(document).ready(function () {
             weatherArray.push(weatherData);
 
         });
-        var mainTable;
+
         weatherArray.forEach(function (object) {
-            mainTable =
-                '<div class="col-xs-3">' +
-                '<p><strong>' + object.day.format("dddd") + ',' + '<br>' +
-                object.day.format("LL") + '</strong></p>' +
-                object.maxTemp + " / " + object.minTemp + '</p>' +
-                '<img src="http://openweathermap.org/img/w/' + object.icon + '.png"><p>' + object.description + '</p>' +
-                '<p><em>Humidity: </em>' + object.humidity + '%</p>' +
-                '<p><em>Wind: </em>' + object.wind + ' mph</p>' +
-                '<p><em>Barometer: </em>' + object.pressure + ' hPa</p>'
-                '</div>'
-            $('#weather-report').append(mainTable);
+            mainTable += buildHTML(object);
         });
-            var coordinates = {
-                lat: getLat(data),
-                long: getLong(data)
-            };
+
+        $('#weather-report').html(mainTable);
+
+        // change map coordinates
+        var coordinates = {
+            lat: getLat(data),
+            long: getLong(data)
+        };
+
+        document.getElementById("latitude").value = getLat(data);
+        document.getElementById("longitude").value = getLong(data);
+
+    }
+    var getWeatherRequest = function (lat, lon) {
+        // console.log("sendingWeatherRequest")
+        $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+            APPID: "b4197e496c4b73186de7934cf48d40d6",
+            // id: 4726206,
+            lat: lat,
+            lon: lon,
+            units: "imperial",
+            cnt: 3
+        }).done(function (data) {
+            renderWeather(data);
+        });
+    }
+    getWeatherRequest(29.42412, -98.493629);
+
+    $("#new-coordinates").click(function () {
+        var newLat = document.getElementById("latitude").value;
+        var newLong = document.getElementById("longitude").value;
+        getWeatherRequest(newLat, newLong);
     });
 });
+
+// 21.281237, -157.835050
