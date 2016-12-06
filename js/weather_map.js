@@ -48,12 +48,12 @@ $(document).ready(function () {
     var getDescription = function (data) {
         return data.weather[0].description;
     };
-    // get today's date
-    // var todaysDate = new Date();
-    // var day = getDate();
-    // var month = getMonth()+1;
-    // var getDateOutput =
-
+    var getLat = function (data) {
+        return data.city.coord.lat;
+    };
+    var getLong = function (data) {
+        return data.city.coord.lon;
+    };
 
     // call OpenWeatherMap API
     var openWeatherRequest = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
@@ -74,7 +74,9 @@ $(document).ready(function () {
                 wind: getWind(object),
                 pressure: getPressure(object),
                 icon: getIcon(object),
-                description: getDescription(object)
+                description: getDescription(object),
+                // get Momentjs.com date data
+                day: moment.unix(object.dt)
             };
             weatherArray.push(weatherData);
 
@@ -82,16 +84,20 @@ $(document).ready(function () {
         var mainTable;
         weatherArray.forEach(function (object) {
             mainTable =
-                '<div class="col-sm-3">' +
-                '<p><strong>Date</strong></p>' +
+                '<div class="col-xs-3">' +
+                '<p><strong>' + object.day.format("dddd") + ',' + '<br>' +
+                object.day.format("LL") + '</strong></p>' +
                 object.maxTemp + " / " + object.minTemp + '</p>' +
                 '<img src="http://openweathermap.org/img/w/' + object.icon + '.png"><p>' + object.description + '</p>' +
                 '<p><em>Humidity: </em>' + object.humidity + '%</p>' +
                 '<p><em>Wind: </em>' + object.wind + ' mph</p>' +
                 '<p><em>Barometer: </em>' + object.pressure + ' hPa</p>'
                 '</div>'
-            console.log(object.icon);
             $('#weather-report').append(mainTable);
         });
+            var coordinates = {
+                lat: getLat(data),
+                long: getLong(data)
+            };
     });
 });

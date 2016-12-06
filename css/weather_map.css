@@ -2,7 +2,7 @@ body {
     background-color: #3dd2cb;
 }
 
-.col-sm-3 {
+.col-xs-3 {
     background-color: white;
     border-radius: 8px;
     margin: 5px;
@@ -11,4 +11,7 @@ body {
 #map-canvas {
     height: 400px;
     width: 100%;
+}
+#current-city {
+    font-size: medium;
 }
