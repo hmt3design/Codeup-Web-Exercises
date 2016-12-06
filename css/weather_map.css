@@ -1,0 +1,14 @@
+body {
+    background-color: #3dd2cb;
+}
+
+.col-sm-3 {
+    background-color: white;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+#map-canvas {
+    height: 400px;
+    width: 100%;
+}
