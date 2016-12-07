@@ -5,13 +5,7 @@ body {
 .row {
     background-color: white;
     border-radius: 8px;
-    margin: 5px;
-}
-
-.col-sm-6, .col-sm-3 {
-    border-color: red;
-    border-width: 3px;
-    padding: 5px;
+    margin: 15px;
 }
 
 #map-canvas {

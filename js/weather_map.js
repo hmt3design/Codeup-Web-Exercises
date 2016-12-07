@@ -41,18 +41,29 @@ $(document).ready(function () {
     };
 
     var buildHTML = function(object) {
-        return '<div class="col-sm-3">' +
-            '<p><strong>' + object.day.format("dddd") + ',' + '<br>' +
-            object.day.format("LL") + '</strong></p>' +
-            object.maxTemp + " / " + object.minTemp + '</p>' +
-            '<img src="http://openweathermap.org/img/w/' + object.icon + '.png"><p>' + object.description + '</p>' +
-            '<p><em>Humidity: </em>' + object.humidity + '%</p>' +
-            '<p><em>Wind: </em>' + object.wind + ' mph</p>' +
-            '<p><em>Barometer: </em>' + object.pressure + ' hPa</p>' +
-        '</div>';
+        return '<tr><td><strong>' + object.day.format("dddd") + ',' + '<br>' +
+            object.day.format("LL") + '</strong><br>' +
+            object.maxTemp + " / " + object.minTemp + '<br>' +
+            '<img src="http://openweathermap.org/img/w/' + object.icon + '.png"><br>' +
+            object.description + '<br>' +
+            '<em>Humidity: </em>' + object.humidity + '%<br>' +
+            '<em>Wind: </em>' + object.wind + ' mph<br>' +
+            '<em>Barometer: </em>' + object.pressure + ' hPa</tr>'
     };
 
-    // call OpenWeatherMap API
+//     return '<div class="col-xs-4">' +
+//         '<p><strong>' + object.day.format("dddd") + ',' + '<br>' +
+//         object.day.format("LL") + '</strong></p>' +
+//         object.maxTemp + " / " + object.minTemp + '</p>' +
+//         '<img src="http://openweathermap.org/img/w/' + object.icon + '.png"><p>' + object.description + '</p>' +
+//         '<p><em>Humidity: </em>' + object.humidity + '%</p>' +
+//         '<p><em>Wind: </em>' + object.wind + ' mph</p>' +
+//         '<p><em>Barometer: </em>' + object.pressure + ' hPa</p>' +
+//         '</div>';
+// };
+
+
+// call OpenWeatherMap API
 
     var renderWeather = function (data) {
         setCityNameFromResponse(data);
