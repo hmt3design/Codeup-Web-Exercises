@@ -5,21 +5,6 @@
 $(document).ready(function () {
     "use strict";
 
-    // Set our map options
-    var mapOptions = {
-        // Set the zoom level
-        zoom: 13,
-
-        // This sets the center of the map at our location
-        center: {
-            lat: 29.42412,
-            lng: -98.493629
-        }
-    };
-
-    // Render the map
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
     var setCityNameFromResponse = function (data) {
         $("#current-city").html(data.city.name);
     };
@@ -56,7 +41,7 @@ $(document).ready(function () {
     };
 
     var buildHTML = function(object) {
-        return '<div class="col-sm-4">' +
+        return '<div class="col-sm-3">' +
             '<p><strong>' + object.day.format("dddd") + ',' + '<br>' +
             object.day.format("LL") + '</strong></p>' +
             object.maxTemp + " / " + object.minTemp + '</p>' +
@@ -102,8 +87,8 @@ $(document).ready(function () {
             long: getLong(data)
         };
 
-        document.getElementById("latitude").value = getLat(data);
-        document.getElementById("longitude").value = getLong(data);
+        // document.getElementById("latitude").value = getLat(data);
+        // document.getElementById("longitude").value = getLong(data);
 
     }
     var getWeatherRequest = function (lat, lon) {
@@ -118,7 +103,7 @@ $(document).ready(function () {
         }).done(function (data) {
             renderWeather(data);
         });
-    }
+    };
     getWeatherRequest(29.42412, -98.493629);
 
     $("#new-coordinates").click(function () {
@@ -126,6 +111,93 @@ $(document).ready(function () {
         var newLong = document.getElementById("longitude").value;
         getWeatherRequest(newLat, newLong);
     });
-});
 
-// 21.281237, -157.835050
+    // Generate the Google Map, centered on San Antonio
+    var myLatlng = new google.maps.LatLng(29.42412,-98.493629);
+    var mapOptions = {
+        zoom: 10,
+        center: myLatlng
+    };
+
+    // Render the map
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    // Place a draggable marker on the map
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        draggable:true,
+        title:"Drag me!"
+    });
+
+    //Add listener
+    google.maps.event.addListener(marker, "dragend", function (event) {
+        var googleLatitude = this.position.lat();
+        var googleLongitude = this.position.lng();
+        getWeatherRequest(googleLatitude, googleLongitude);
+    });
+
+    // Create the search box and link it to the UI element.
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    // Bias the SearchBox results towards current map's viewport.
+    map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+    });
+
+    var marker = [];
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+    searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
+        if (places.length == 0) {
+            return;
+        }
+
+        // Clear out the old markers.
+        marker.forEach(function(marker) {
+            marker.setMap(null);
+        });
+        marker = [];
+
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+            if (!place.geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+            var icon = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            marker.push(new google.maps.Marker({
+                map: map,
+                icon: icon,
+                title: place.name,
+                position: place.geometry.location,
+                // draggable: true
+            }));
+
+            if (place.geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(place.geometry.viewport);
+            } else {
+                bounds.extend(place.geometry.location);
+            }
+            var googleLatitude = marker[0].position.lat();
+            var googleLongitude = marker[0].position.lng();
+            getWeatherRequest(googleLatitude, googleLongitude);
+
+        });
+        map.fitBounds(bounds);
+        // getWeatherRequest(googleLatitude, googleLongitude);
+    });
+})

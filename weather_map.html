@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,900" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6QF_vEdSzxYly9t2UZSbUgPzvVuqeQ30"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6QF_vEdSzxYly9t2UZSbUgPzvVuqeQ30&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
@@ -16,16 +15,17 @@
 <div id="weather-container" class="container">
     <h2>Weather application</h2>
     <div class="row">
-        <div id="current-city" class="col-sm-6"></div>
-        <div id="enter-coordinates" class="col-sm-6">
-                Latitude: <input type="text" id="latitude" value="">Longitude: <input type="text" id="longitude" value=""><button id="new-coordinates">Set new coordinates</button>
-        </div>
+        <div id="current-city" class="col-sm-3"></div>
+        <!--<div id="enter-coordinates" class="col-sm-6">-->
+                <!--Latitude: <input type="text" id="latitude" value="">Longitude: <input type="text" id="longitude" value=""><button id="new-coordinates">Set new coordinates</button>-->
+        <!--</div>-->
     </div>
     <div id="weather-report" class="row">
         <!-- This is where I will programmatically send weather data. -->
     </div>
 </div>
 <div id="google-map" class="container">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 <div id="map-canvas"></div>
 </div>
 </body>
