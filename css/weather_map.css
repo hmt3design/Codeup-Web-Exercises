@@ -8,6 +8,33 @@ body {
     margin: 15px;
 }
 
+#content {
+    max-width: 100em;
+    /*margin: 15px auto;*/
+    position: relative;
+    padding: 0px;
+}
+.content-item {
+    width: 16%;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+}
+.content-icon-wrapper {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.content-icon {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 #map-canvas {
     height: 400px;
     width: 100%;
